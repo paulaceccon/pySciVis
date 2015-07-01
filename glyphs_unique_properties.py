@@ -28,7 +28,7 @@ for x in numpy.arange(0, 3.3, .3):
 		phi *= numpy.pi / 2					# [0, pi/2]
 		for v in (0, pi):
 			color = m.to_rgba(phi)
-			alpha = m.to_rgba(theta)
+			opacity = m.to_rgba(theta)
 			wedges.append(Wedge((x, y),
 					      .15,
                           degrees(v + phi - theta),
