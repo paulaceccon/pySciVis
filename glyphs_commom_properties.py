@@ -29,7 +29,7 @@ for x in numpy.arange(0, 3.3, .3):
                           degrees(v + phi + theta)))
 			circles.append(Circle((x, y),
                            .15))
-			colors.append(phi)               
+			colors.append(0.5)               
 
 collection = PatchCollection(circles, cmap = plt.cm.hot_r, alpha=0.2)
 collection.set_array(numpy.array(colors))
