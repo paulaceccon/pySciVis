@@ -10,7 +10,13 @@ A set of Python scripts developed to facilitate some scientific visualizations. 
 
 <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/glyphs_unique_properties.png" alt="alt text" height="300px">
 
-- **LIC/lic_demo**: Improve resolution when the vector field is not enough discretized.
+- **LIC/lic_demo**: Improves resolution when the vector field is not enough discretized.
 
 <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/LIC/original-flow.png" alt="alt text" height="300px">
 <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/LIC/more_resolution-flow.png" alt="alt text" height="300px">
+
+- **plot_aspect**: Improves the aspect of a plot to be more readable.
+
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/plot_aspect_default.png" alt="alt text" height="300px">
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/plot_aspect_auto.png" alt="alt text" height="300px">
+
