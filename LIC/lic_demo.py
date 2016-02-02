@@ -71,4 +71,4 @@ def vector_flow(output_file, i_factor=1):
 
 if __name__ == '__main__':
 	vector_flow("original")
-	vector_flow("more_resolution", 4)
+	vector_flow("more_resolution", 2)
