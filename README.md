@@ -20,3 +20,11 @@ A set of Python scripts developed to facilitate some scientific visualizations. 
 <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/plot_aspect_default.png" alt="alt text" height="300px">
 <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/plot_aspect_auto.png" alt="alt text" height="300px">
 
+- **custom_grid**: Creates a grid with custom major and minor gridlines. It also changes the margin and sytle of the plot.
+
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/custom_grid.png" alt="alt text" height="300px">
+
+- **patches_over_image**: Given a set of points in a grid, draw rectangle patches to highlight such points.
+
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/patches_over_image.png" alt="alt text" height="300px">
+
