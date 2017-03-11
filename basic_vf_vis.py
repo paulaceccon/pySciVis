@@ -10,20 +10,6 @@ from scipy.interpolate import RegularGridInterpolator
 
 plt.style.use('ggplot')
 
-def regrid(data, out_y, out_x):
-	"""Given some data with dimensions given by data.shape,
-    regrid this data to shape out_y, out_x.
-    """
-
-	m = max(data.shape[0], data.shape[1])
-	y = np.linspace(0, 1.0/m, data.shape[0])
-	x = np.linspace(0, 1.0/m, data.shape[1])
-	interpolating_function = RegularGridInterpolator((y, x), data)
-	
-	xv, yv = np.meshgrid(np.linspace(0, 1.0/m, out_x), np.linspace(0, 1.0/m, out_y))
-	
-	return interpolating_function((yv, xv))
-
 
 def plot_quiver(vx, vy, file_name):
 	"""Given a vector field specified by vx, vy, display it using
@@ -90,17 +76,8 @@ def plot_contour(vx, vy, file_name):
 
 
 if __name__ == '__main__': 
-    rx = 82
-    ry = 72
-    
     vx = np.loadtxt('Data/vf_x.csv', delimiter=',')
     vy = np.loadtxt('Data/vf_y.csv', delimiter=',')
-    
-    plot_quiver(vx, vy, 'Original') 
-    
-    vx = regrid(vx, ry, rx)
-    vy = regrid(vy, ry, rx)
-            
         
     plot_quiver(vx, vy, 'Quiver')  
     plot_streamlines(vx, vy, 'Streamplot')	
