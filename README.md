@@ -28,3 +28,9 @@ A set of Python scripts developed to facilitate some scientific visualizations. 
 
 <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/patches_over_image.png" alt="alt text" height="300px">
 
+- **basic_vf_vis**: Some plots for 2D vector fields.
+
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/Quiver.png" alt="alt text" height="250px">
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/Streamplot.png" alt="alt text" height="250px">
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/Contour.png" alt="alt text" height="250px">
+
