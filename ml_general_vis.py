@@ -22,7 +22,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import SGDClassifier
 from sklearn.svm import SVC
 
-def plot_hyperplane(c, color, fitted_model):
+def plot_hyperplane(c, color, fitted_model, output_path=None):
     """
     Plot the one-against-all classifiers for the given model.
 
@@ -32,6 +32,7 @@ def plot_hyperplane(c, color, fitted_model):
     c : index of the hyperplane to be plot
     color : color to be used when drawing the line
     fitted_model : the fitted model
+    output_path : saving path
     """
     xmin, xmax = plt.xlim()
     ymin, ymax = plt.ylim()
@@ -46,9 +47,12 @@ def plot_hyperplane(c, color, fitted_model):
         return (-(x0 * coef[c, 0]) - intercept[c]) / coef[c, 1]
 
     plt.plot([xmin, xmax], [line(xmin), line(xmax)], ls="--", color=color, zorder=3)
+    if output_path:
+        plt.savefig(output_path+'.png', bbox_inches='tight', dpi=400)
 
 
-def plot_decision_boundary(X, y, fitted_model, features, targets):
+
+def plot_decision_boundary(X, y, fitted_model, features, targets, output_path):
     """
     This function plots a model decision boundary as well as it tries to plot 
     the decision probabilities, if available.
@@ -60,6 +64,7 @@ def plot_decision_boundary(X, y, fitted_model, features, targets):
     X : the data to learn
     y : the classification labels
     fitted_model : the fitted model
+    output_path : saving path
     """
     cmap = plt.get_cmap('Set3')
     prob = cmap
@@ -73,6 +78,11 @@ def plot_decision_boundary(X, y, fitted_model, features, targets):
         x_min, x_max = X[:, 0].min() - .1, X[:, 0].max() + .1
         y_min, y_max = X[:, 1].min() - .1, X[:, 1].max() + .1
         xx, yy = np.meshgrid(np.arange(x_min, x_max, mesh_step_size), np.arange(y_min, y_max, mesh_step_size))
+
+        ax = plt.gca()
+        ax.set_xlim((x_min, x_max), auto=False)
+        ax.set_ylim((y_min, y_max), auto=False)
+
         # First plot, predicted results using the given model
         if i == 0:
             Z = fitted_model.predict(np.c_[xx.ravel(), yy.ravel()])
@@ -106,7 +116,7 @@ def plot_decision_boundary(X, y, fitted_model, features, targets):
         plt.gca().set_aspect('equal')      
     plt.tight_layout()
     plt.subplots_adjust(top=0.9, bottom=0.08, wspace=0.2)
-    plt.show()
+    plt.savefig(output_path+'.png', bbox_inches='tight', dpi=400)
 
 
 def plot_scatter_matrix(df, output_path, hue=None):
@@ -122,10 +132,10 @@ def plot_scatter_matrix(df, output_path, hue=None):
     """
     fig = sns.pairplot(df, hue=hue)
     fig.fig.subplots_adjust(right=0.8)
-    fig.savefig(output_path+'.pdf', bbox_inches='tight', dpi=400)
+    fig.savefig(output_path+'.png', bbox_inches='tight', dpi=400)
 
 
-def plot_confusion_matrix(y_test, y_predicted, targets, model=''):
+def plot_confusion_matrix(y_test, y_predicted, targets, output_path, model=''):
     """
     This function plots a confusion matrix.
 
@@ -135,7 +145,8 @@ def plot_confusion_matrix(y_test, y_predicted, targets, model=''):
     y_test : ground truth
     y_predicted : predicted targets
     target : possible targets
-    model : name of the fitted model
+    model : name of the fitted model name
+    output_path : saving path
     """
     confusion_mc = confusion_matrix(y_test, y_predicted)
     df_cm = pd.DataFrame(confusion_mc, index = targets, columns = targets)
@@ -145,7 +156,7 @@ def plot_confusion_matrix(y_test, y_predicted, targets, model=''):
     plt.title(model+' \nAccuracy:{0:.3f}'.format(accuracy_score(y_test, y_predicted)))
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
-    plt.show()
+    plt.savefig(output_path+'.png', bbox_inches='tight', dpi=400)
 
 
 if __name__ == '__main__': 
@@ -165,7 +176,7 @@ if __name__ == '__main__':
     for i, v in enumerate(df['target'].unique()):
         df["target"][df["target"]==v] = iris.target_names[i]
 
-    plot_scatter_matrix(df, 'scatter_matrix', 'target')
+    plot_scatter_matrix(df, 'ml_scatter_matrix', 'target')
 
     clf1 = DecisionTreeClassifier(max_depth=4)
     clf2 = KNeighborsClassifier(n_neighbors=7)
@@ -177,10 +188,10 @@ if __name__ == '__main__':
     clf3.fit(X_train, y_train)
     clf4.fit(X_train, y_train)
 
-    plot_decision_boundary(X, y, clf1, iris.feature_names[:2], iris.target_names)
-    plot_decision_boundary(X, y, clf2, iris.feature_names[:2], iris.target_names)
-    plot_decision_boundary(X, y, clf3, iris.feature_names[:2], iris.target_names)
-    plot_decision_boundary(X, y, clf4, iris.feature_names[:2], iris.target_names)
+    plot_decision_boundary(X, y, clf1, iris.feature_names[:2], iris.target_names, 'ml_DecisionTree')
+    plot_decision_boundary(X, y, clf2, iris.feature_names[:2], iris.target_names, 'ml_KNN')
+    plot_decision_boundary(X, y, clf3, iris.feature_names[:2], iris.target_names, 'ml_SVC_RBF')
+    plot_decision_boundary(X, y, clf4, iris.feature_names[:2], iris.target_names, 'ml_SGD')
 
     y_predicted = clf2.predict(X_test)
-    plot_confusion_matrix(y_test, y_predicted, iris.target_names)
+    plot_confusion_matrix(y_test, y_predicted, iris.target_names, 'ml_KNN_CM')
