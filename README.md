@@ -30,3 +30,10 @@ A set of Python scripts developed to facilitate some scientific visualizations. 
 
 <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/Quiver.png" alt="alt text" height="250px"> <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/Streamplot.png" alt="alt text" height="250px"> <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/Contour.png" alt="alt text" height="250px">
 
+- **ml_general_vis.py**: Some plots to provide insights of Machine Learning algorithms and decisions
+
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_DecisionTree.png" alt="alt text" height="250px">
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_KNN.png" alt="alt text" height="250px">
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_SGD.png" alt="alt text" height="250px"><img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_KNN_CM.png" alt="alt text" height="250px">
+
+
