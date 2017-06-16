@@ -131,7 +131,7 @@ def plot_scatter_matrix(df, output_path, hue=None):
     output_path : saving path
     """
     fig = sns.pairplot(df, hue=hue)
-    fig.fig.subplots_adjust(right=0.8)
+    fig.fig.subplots_adjust(right=0.87)
     fig.savefig(output_path+'.png', bbox_inches='tight', dpi=400)
 
 
