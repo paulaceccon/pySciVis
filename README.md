@@ -3,12 +3,9 @@ A set of Python scripts developed to facilitate some scientific visualizations. 
 
 - **colorbar_custom_limits**: Draws a plot showing a colorbar with custom limits.
 - **glyphs_commom_properties**: Draws a plot composed by glyphs; properties are common for the glyphs.
-
-<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/glyphs_commom_properties.png" alt="alt text" height="300px">
-
 - **glyphs_unique_properties**: Draws a plot composed by glyphs; properties are unique for each glyph.
 
-<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/glyphs_unique_properties.png" alt="alt text" height="300px">
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/glyphs_commom_properties.png" alt="alt text" height="300px"> <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/glyphs_unique_properties.png" alt="alt text" height="300px">
 
 - **LIC/lic_demo**: Improves resolution when the vector field is not enough discretized.
 
@@ -34,6 +31,6 @@ A set of Python scripts developed to facilitate some scientific visualizations. 
 
 <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_DecisionTree.png" alt="alt text" height="250px">
 <img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_KNN.png" alt="alt text" height="250px">
-<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_SGD.png" alt="alt text" height="250px"><img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_KNN_CM.png" alt="alt text" height="250px">
+<img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_SGD.png" alt="alt text" height="275px"><img src="https://github.com/paulaceccon/PythonForScientificVisualization/blob/master/Samples/ml_KNN_CM.png" alt="alt text" height="250px">
 
 
